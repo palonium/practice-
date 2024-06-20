@@ -23,7 +23,7 @@ const getData = (urls) => {
 
 const URLS = [
   "https://jsonplaceholder.typicode.com/users",
-  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/posts/6",
   "https://jsonplaceholder.typicode.com/comments",
 ];
 
