@@ -5,8 +5,7 @@
 function callbackFunction(callback) {
     setTimeout(callback, 2000);
   }
-  
-  // Пример использования
+
   function callbackNew() {
     console.log('Функция была вызвана после задержки в 2 секунды');
   }
