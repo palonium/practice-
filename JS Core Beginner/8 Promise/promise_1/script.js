@@ -2,7 +2,7 @@
 // асинхронных операций последовательно,
 // используя Promises
 
-const f1 = () => {
+const delayAndLogOne = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log(1);
@@ -11,7 +11,7 @@ const f1 = () => {
   });
 };
 
-const f2 = () => {
+const delayAndLogTwo = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log(2);
@@ -20,7 +20,7 @@ const f2 = () => {
   });
 };
 
-const f3 = () => {
+const delayAndLogThree = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       console.log(3);
@@ -29,12 +29,12 @@ const f3 = () => {
   });
 };
 
-const seqRunner = (deeds) => {
-  return deeds.reduce((p, deed) => {
-    return p.then(deed);
+const runSequentially = (tasks) => {
+  return tasks.reduce((previousPromise, currentTask) => {
+    return previousPromise.then(currentTask);
   }, Promise.resolve());
 };
 
-seqRunner([f1, f2, f3]).then(() => {
-  console.log('выполнено');
+runSequentially([delayAndLogOne, delayAndLogTwo, delayAndLogThree]).then(() => {
+  console.log('Выполнено');
 });
