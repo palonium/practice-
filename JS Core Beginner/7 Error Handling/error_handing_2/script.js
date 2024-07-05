@@ -17,7 +17,7 @@ function accessProperty(obj, propertyName) {
     }
 }
 
-const obj = { name: 'John', age: 30 };
+const obj = { name: 'Polina', age: 20 };
 console.log(accessProperty(obj, 'name')); 
 console.log(accessProperty(obj, 'address')); 
 
